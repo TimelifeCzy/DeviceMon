@@ -167,7 +167,7 @@ void* SelectRegister(
 	case X86_REG_RDI:
 		reg = &Context->di;
 	break;
-
+#ifdef _WIN64
 	case X86_REG_R8B:
 	case X86_REG_R8W:
 	case X86_REG_R8D:
@@ -223,6 +223,7 @@ void* SelectRegister(
 	case X86_REG_R15:
 		reg = &Context->r15;
 	break;
+#endif
 	case X86_REG_BP:
 	case X86_REG_EBP:
 	case X86_REG_RBP:
